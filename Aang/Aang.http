@@ -1,0 +1,7 @@
+@Aang_HostAddress = https://localhost:7180
+
+GET {{Aang_HostAddress}}/weatherforecast/
+Accept: application/json
+Authorization: Bearer 
+
+###
