@@ -1,7 +1,7 @@
 @Aang_HostAddress = https://localhost:7180
 
-GET {{Aang_HostAddress}}/weatherforecast/
-Accept: application/json
-Authorization: Bearer 
+#GET {{Aang_HostAddress}}/weatherforecast/
+#Accept: application/json
 
-###
+Get http://192.168.10.21:1000/weatherforecast
+Accept: application/json
