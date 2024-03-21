@@ -1,5 +1,8 @@
-﻿namespace Aang.Model
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Aang.Model
 {
+    [Table("User")]
     public class LocalUser
     {
         public int ID { get; set; }
