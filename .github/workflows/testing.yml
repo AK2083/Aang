@@ -37,6 +37,8 @@ jobs:
           reports: './**/TestResults/**/*.cobertura.xml'
           targetdir: '${{ github.workspace }}/coveragereport'
           reporttypes: 'MarkdownSummaryGithub'
+        env: 
+          ApiSettings__SecretKey: ${{ secrets.APISecret }}
       - name: Upload Coverage
         run: cat $GITHUB_WORKSPACE/coveragereport/SummaryGithub.md >> $GITHUB_STEP_SUMMARY
       - name: Archive code
