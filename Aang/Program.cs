@@ -29,7 +29,7 @@ builder.Services.AddAuthentication(config =>
     {
         ValidateIssuerSigningKey = true,
         IssuerSigningKey = new SymmetricSecurityKey(
-            Encoding.ASCII.GetBytes(builder.Configuration.GetValue<string>("ApiSettings:SecretKey") ?? "Bananerama")
+            Encoding.ASCII.GetBytes(builder.Configuration.GetValue<string>("SecretKey") ?? "Bananerama")
         ),
         ValidateIssuer = false,
         ValidateAudience = false
