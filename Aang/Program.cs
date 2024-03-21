@@ -29,7 +29,7 @@ builder.Services.AddAuthentication(config =>
     {
         ValidateIssuerSigningKey = true,
         IssuerSigningKey = new SymmetricSecurityKey(
-            Encoding.ASCII.GetBytes(builder.Configuration.GetValue<string>("SecretKey") ?? "Bananerama")
+            Encoding.ASCII.GetBytes(builder.Configuration["SecretKey"] ?? "Bananerama")
         ),
         ValidateIssuer = false,
         ValidateAudience = false
@@ -67,7 +67,7 @@ builder.Services.AddSwaggerGen(config =>
 });
 
 var app = builder.Build();
-app.Logger.LogInformation("Stuff:" + builder.Configuration.GetValue<string>("SecretKey") ?? "Bananerama");
+app.Logger.LogInformation("Stuff:" + builder.Configuration["SecretKey"] ?? "Bananerama");
 //try
 //{
 //    using (var conn = new SqlConnection(builder.Configuration["ConnectionsStrings:DefaultConnection"]))
