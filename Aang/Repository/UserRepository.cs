@@ -16,7 +16,7 @@ namespace Aang.Repository
         public UserRepository(ApplicationDBContext db, IConfiguration config)
         {
             _db = db;
-            _secretKey = config.GetValue<string>("ApiSettings:SecretKey") ?? "Bananerama";
+            _secretKey = config.GetValue<string>("SecretKey") ?? "Bananerama";
         }
 
         public bool IsUniqueUser(string username)

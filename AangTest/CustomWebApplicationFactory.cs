@@ -38,17 +38,6 @@ namespace AangTest
                 });
 
                 Provider = services.BuildServiceProvider();
-                //var configuration = serviceProvider.GetRequiredService<IConfiguration>();
-                //SecretKey = configuration["ApiSettings:SecretKey"] ?? "Bananerama";
-
-                //var scope = serviceProvider.CreateScope();
-                //var scopedService = scope.ServiceProvider;
-                //Context = scopedService.GetRequiredService<AppTestContext>();
-
-                //var test = Context.Database.EnsureDeleted();
-                //var test2 = Context.Database.EnsureCreated();
-
-                //Context.SeedData();
             });
 
             builder.UseEnvironment("Development");

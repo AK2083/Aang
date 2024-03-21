@@ -38,7 +38,7 @@ namespace AangTest
         private string GetSecretKey()
         {
             var configuration = _factory.Provider.GetRequiredService<IConfiguration>();
-            return configuration["ApiSettings:SecretKey"] ?? "Bananerama";
+            return configuration["SecretKey"] ?? "Bananerama";
         }
 
         private string GetToken(string secretKey)
