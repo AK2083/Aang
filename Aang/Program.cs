@@ -67,7 +67,6 @@ builder.Services.AddSwaggerGen(config =>
 });
 
 var app = builder.Build();
-app.Logger.LogInformation("Stuff:" + builder.Configuration["SecretKey"] ?? "Bananerama");
 //try
 //{
 //    using (var conn = new SqlConnection(builder.Configuration["ConnectionsStrings:DefaultConnection"]))
