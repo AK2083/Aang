@@ -30,6 +30,8 @@ jobs:
         run: dotnet build --no-restore
         
       - name: Run tests 
+        env: 
+          SecretKey: ${{ secrets.APISECRET }}
         run: dotnet test --collect "Code Coverage;Format=cobertura" --no-build --verbosity normal
       - name: ReportGenerator
         uses: danielpalme/ReportGenerator-Github-Action@5.2.0
@@ -37,8 +39,6 @@ jobs:
           reports: './**/TestResults/**/*.cobertura.xml'
           targetdir: '${{ github.workspace }}/coveragereport'
           reporttypes: 'MarkdownSummaryGithub'
-        env: 
-          SecretKey: ${{ secrets.APISECRET }}
       - name: Upload Coverage
         run: cat $GITHUB_WORKSPACE/coveragereport/SummaryGithub.md >> $GITHUB_STEP_SUMMARY
       - name: Archive code
